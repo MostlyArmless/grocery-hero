@@ -1,4 +1,4 @@
-# grocery-hero-x
+# grocery-hero
 
 You have an excellent package delivery service.
 
@@ -17,12 +17,4 @@ var excellentPkg = require('grocery-hero-x');
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
-## time to coad
+Don't. Unless you were invited.

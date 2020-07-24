@@ -1,4 +1,4 @@
-export const handleRegister = ( req, res, bcrypt, db ) =>
+export const handleRegister = ( req, res, db ) =>
 {
     const { email, name, password } = req.body;
     //Validation
@@ -7,7 +7,7 @@ export const handleRegister = ( req, res, bcrypt, db ) =>
         return res.status( 400 ).json( 'Incorrect form submission.' );
     }
 
-    const hash = bcrypt.hashSync( password );
+    const hash = password;//bcrypt.hashSync( password );
 
     db.transaction( trx =>
     {
