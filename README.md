@@ -12,6 +12,17 @@ Need groceries but can't go out? Get matched with a volunteer who will do your s
 npm install
 ```
 
+### Switching branches
+After you switch branches you must clean the `/build` dir and ensure the auto-reloader (compiler) is running otherwise you'll be running code from the previous branch. There's a script to clean and rebuild:
+
+```Powershell
+# Delete the /build dir contents
+npm run clean
+
+# Delete the /build dir contents & re-compile once
+npm run rebuild
+```
+
 ### Setting up LiveShare for collaborative development
 
 1. From the Live Share tab in VS Code: click "Start collaboration session..."
@@ -30,3 +41,9 @@ From the Run tab (`ctrl+shift+D`) in VS Code: select the `Launch Server with ts-
 ```Powershell
 npm start
 ```
+
+## NPM Scripts
+
+* `npm run clean` deletes the contents of the /build dir. Useful after switching branches
+* `npm run build` just runs tsc. Necessary as a wrapper for `tsc` cli because `npm-run-all` can only call npm scripts, not cli tools
+* `npm run rebuild` calls `clean` and `build` sequentially, using `npm-run-all` package, which provides a cross-platform way of calling npm scripts from npm scripts in either a sequential or parallel way.
